@@ -221,12 +221,12 @@ export default function Storefront({ products, purchasedIds, onPurchaseComplete,
       {/* Filter and Search Bar with Stats row combined */}
       <div className="mb-10 mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between border-b border-t border-white/5 py-8" id="filter-bar">
         {/* Category Pill Sliders */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-nowrap overflow-x-auto gap-2 pb-2 pt-1 items-center max-w-full">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer border ${
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer border shrink-0 whitespace-nowrap ${
                 selectedCategory === cat
                   ? "bg-amber-500/10 border-amber-500 text-amber-500"
                   : "bg-transparent border-white/10 text-slate-400 hover:text-white hover:border-white/30"
